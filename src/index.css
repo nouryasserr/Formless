@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Manrope Variable", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #43302e;
+}
+
+h1 {
+  font-family: "Caveat Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "Space Grotesk Variable", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #43302e;
+}
+
+.container {
+  width: calc(100% - 120px);
+  margin: 0 auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1.5fr 0.5fr;
+  gap: 12px 16px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "col-1 col-2 col-4"
+    "col-1 col-2 col-4"
+    "col-1 col-3 col-4"
+    "col-1 col-3 col-5";
+}
+
+.col-1 {
+  grid-area: col-1;
+}
+
+.col-2 {
+  grid-area: col-2;
+}
+
+.col-3 {
+  grid-area: col-3;
+}
+
+.col-4 {
+  grid-area: col-4;
+}
+
+.col-5 {
+  grid-area: col-5;
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: calc(100% - 20px);
+  }
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1.5fr 0.5fr;
+    gap: 4px 8px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "col-2 col-4"
+      "col-2 col-4"
+      "col-3 col-4"
+      "col-3 col-5";
+  }
+}
